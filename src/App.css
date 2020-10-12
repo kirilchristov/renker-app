@@ -1,38 +1,398 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* ! ----------------NAVBAR AND DROPDOWN--------------------------------- */
+/* Fixes added extra padding from bootstrap on mobile*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Centers the main container - we don't use the regular boostrap one */
+.wrapper {
+  width: 1280px;
+  margin: 0 auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-main-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+/* Removes default icon on the drop down */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Vertical tabs styling */
+
+.advanced {
+  position: static;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+  margin-top: 0px !important;
+  width: 1250px !important;
+  left: -70%;
+  background-color: none;
+}
+
+/* Bootstrap style override for the navbar */
+.bg-light {
+  background-image: linear-gradient(
+    90deg,
+    rgb(246, 72, 112),
+    rgb(253, 126, 62)
+  ) !important;
+}
+
+/* Navbar CSS */
+.navbar {
+  height: 80px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* fixes dd position and hovering */
+.navbar-expand-lg .navbar-collapse {
+  margin: -7px;
+}
+
+.navbar-nav > li {
+  padding: 10px 10px !important;
+  content: "";
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-nav > li:hover {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* dd new togler */
+.navbar-toggler {
+  border: none;
+  background-color: rgb(230, 74, 7);
+  padding: 0.9rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255' stroke-linecap='round' stroke-miterlimit='10' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 700;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-item {
+  z-index: 1000;
+}
+
+/* divider */
+.divider {
+  color: white;
+  opacity: 0.3;
+}
+
+.dropdown-menu {
+  width: 260px;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  border: none;
+  /* padding: 0 !important; */
+}
+
+/** Dropdown single item */
+.dropdown-item {
+  font-weight: 700;
+  border-top: 1px solid rgb(232, 233, 234);
+  background-color: rgb(243, 244, 245);
+  padding: 1rem 2rem;
+}
+
+.dropdown-item:first-child {
+  border-top: none;
+  background-color: white;
+  color: rgb(232, 72, 6);
+}
+
+.dropdown-item:hover {
+  background-color: rgb(232, 72, 6);
+  color: white;
+}
+
+/* Social Icons Bar */
+.social-wrapper {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-container {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.social-single {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+/* Search Icon */
+.search-icon {
+  /* height: 100%; */
+  width: 70px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Advanced tab dd menu */
+
+.rwt__tabpanel {
+  padding-top: 20px;
+}
+.rwt__tab {
+  width: 100%;
+  text-align: start;
+}
+
+.rwt__tab[aria-selected="true"] {
+  color: rgb(250, 65, 0);
+  background-color: rgb(221, 221, 221);
+}
+
+.rwt__tab[aria-selected="true"]:after {
+  border-right: none !important;
+}
+.vertical-container {
+  display: flex;
+}
+
+.vertical-container-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+}
+.vertical-tab-image {
+  width: 230px;
+  height: 150px;
+}
+.vertical-tab-title {
+  font-weight: 500;
+  font-size: 21px;
+}
+
+/* ! -----------------MAIN SECTION -------------------- */
+
+/* IMAGES */
+
+.outer {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.outer-red {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.outer::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, transparent, black);
+  position: absolute;
+  top: 0;
+  opacity: 0.7;
+  border-radius: 5px;
+}
+
+.outer-red::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(232, 72, 6);
+  position: absolute;
+  top: 0;
+  opacity: 0.7;
+  border-radius: 5px;
+}
+
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.inner img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.main-left {
+  height: 727px;
+  width: 100%;
+}
+
+.right-top {
+  height: 455px;
+  width: 100%;
+}
+
+.right-bottom {
+  height: 256px;
+  width: 100%;
+}
+
+.img-right-top {
+  max-height: 455px;
+}
+/* Text over image */
+
+.thumbnail {
+  position: relative;
+}
+
+.caption {
+  position: absolute;
+  color: white;
+  line-height: normal;
+}
+
+.caption-left {
+  z-index: 2;
+  top: 67%;
+  left: 8%;
+  width: 85%;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.caption-right-top {
+  z-index: 2;
+  position: absolute;
+  top: 42%;
+  left: 7%;
+  width: 95%;
+  font-weight: 700;
+  font-size: 27px;
+}
+
+.caption-right-bottom {
+  z-index: 2;
+  position: absolute;
+  color: white;
+  line-height: normal;
+  position: absolute;
+  top: 74%;
+  left: 7%;
+  width: 85%;
+  font-weight: 700;
+  font-size: 27px;
+}
+
+/* Tag buttons */
+
+.tag {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+#health {
+  background-color: rgb(106, 33, 620);
+}
+
+#lifestyle {
+  background-color: rgb(233, 145, 1);
+}
+
+#fashion {
+  background-color: rgb(219, 23, 146);
+}
+
+/* CREDITS */
+
+.credits {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* ! -----------------------MEDIA SCREEN -------------------------------------- */
+
+@media only screen and (max-width: 1250px) {
+  .advanced {
+    width: 990px !important;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 990px) {
+  /* Fixes bootrstap behaviour of pushing down */
+  .social-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .navbar-nav,
+  .collapsing {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100vw;
+  }
+
+  .nav-link {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .navbar-nav > li {
+    padding: 0 !important;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .caption-left {
+    top: 60%;
   }
 }

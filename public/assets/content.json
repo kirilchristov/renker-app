@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "5f81c079524f1a5362ed02f3",
+    "title": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
+    "author": "John Wick",
+    "image": "/assets/image1.jpg",
+    "date": "20,July 2020",
+    "tags": ["fashion", "lifestyle"]
+  },
+  {
+    "_id": "5f81c0791c1cbca55e0203f1",
+    "title": "Sed ut perspiciatis unde voluptatem",
+    "author": "John Wick",
+    "image": "/assets/image1.png",
+    "date": "20,July 2020",
+    "tags": ["lifestyle"]
+  },
+  {
+    "_id": "5f81c079191c83dff260a011",
+    "title": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
+    "author": "John Wick",
+    "image": "/assets/image2.png",
+    "date": "20,July 2020",
+    "tags": ["health"]
+  }
+]
