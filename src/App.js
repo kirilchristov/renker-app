@@ -6,6 +6,7 @@ import NavBar from './Components/NavBar'
 
 
 function App() {
+  console.log("Animation added - version 1.3")
   return (
     <div className="App">
      <NavBar />
