@@ -402,6 +402,10 @@ body {
   .caption-left {
     top: 60%;
   }
+
+  .image-hovered {
+    transform: none;
+  }
 }
 
 

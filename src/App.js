@@ -6,7 +6,7 @@ import NavBar from './Components/NavBar'
 
 
 function App() {
-  console.log("Animation added - version 1.3")
+  console.log("Fixed animation on mobile - removed - version 1.4")
   return (
     <div className="App">
      <NavBar />

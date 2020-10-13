@@ -33,7 +33,6 @@ const NavItemDropDownAdvanced = (props) => {
   if (!data[0]) {
     return <></>;
   } else {
-    console.log("The data", data);
     return (
       <li className="nav-item dropdown">
         <a

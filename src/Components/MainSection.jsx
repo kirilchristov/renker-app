@@ -20,7 +20,6 @@ const MainSection = (props) => {
   const [hoverR, setHoverR] = useState({ hoverR: false });
 
   const mouseEnter = (e) => {
-    console.dir(e.target.id);
     if (e.target.id === "left-image-id") {
       setHoverL(true);
     } else if (e.target.id === "right-image-id") {
