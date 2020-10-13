@@ -251,6 +251,7 @@ body {
   border-radius: 5px;
 }
 
+
 .main-left {
   height: 727px;
   width: 100%;
@@ -349,6 +350,12 @@ body {
   font-weight: 400;
 }
 
+/* Handling hovering on images */
+
+.image-hovered {
+  transform: scale(1.1) translate(-5%, -5%);
+}
+
 /* ! -----------------------MEDIA SCREEN -------------------------------------- */
 
 @media only screen and (max-width: 1250px) {
@@ -396,3 +403,6 @@ body {
     top: 60%;
   }
 }
+
+
+

@@ -15,6 +15,24 @@ const MainSection = (props) => {
     fetchData();
   }, []);
 
+  // Logic for changing the css class based on which element we hover
+  const [hoverL, setHoverL] = useState({ hoverL: false });
+  const [hoverR, setHoverR] = useState({ hoverR: false });
+
+  const mouseEnter = (e) => {
+    console.dir(e.target.id);
+    if (e.target.id === "left-image-id") {
+      setHoverL(true);
+    } else if (e.target.id === "right-image-id") {
+      setHoverR(true);
+    }
+  };
+
+  const mouseLeave = () => {
+    setHoverL(false)
+    setHoverR(false)
+  };
+
   if (!data[0]) {
     return <h1>...Loading</h1>;
   } else {
@@ -55,9 +73,18 @@ const MainSection = (props) => {
                 </div>
               </div>
             </div>
-            <div className="outer main-left">
+            <div
+              id="left-image-id"
+              className="outer main-left"
+              onMouseEnter={(e) => mouseEnter(e)}
+              onMouseLeave={mouseLeave}
+            >
               <div className="inner thumbnail text-left main-left">
-                <img className="img img-left" src={data[0].image} alt="logo" />
+                <img
+                  className={hoverL ? "image-hovered" : "img img-left"}
+                  src={data[0].image}
+                  alt="logo"
+                />
               </div>
             </div>
           </div>
@@ -88,10 +115,15 @@ const MainSection = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="outer right-top">
+              <div
+                className="outer right-top"
+                id="right-image-id"
+                onMouseEnter={(e) => mouseEnter(e)}
+                onMouseLeave={mouseLeave}
+              >
                 <div className="inner right-top">
                   <img
-                    className="img img-right-top"
+                    className={hoverR ? "image-hovered" : "img img-right-top"}
                     src={data[2].image}
                     alt="article"
                   />
